@@ -25,8 +25,21 @@ public class Journal
 
     public void LoadFromFile()
     {
-        Console.Write("Please enter file name: ");
+                // listing all available files to load.
+        DirectoryInfo d = new DirectoryInfo(@"./data/"); 
+
+        FileInfo[] Files = d.GetFiles(); //Getting all files in this directory/folder.
+        int count = 0;
+        foreach(FileInfo file in Files )
+        {
+            count++;
+            Console.WriteLine($"{count}. {file.Name}");
+        }
+        Console.Write("Please enter any file name from above list: ");
         string filename = "./data/"+Console.ReadLine();
+        Console.WriteLine();
+
+
         string[] lines = System.IO.File.ReadAllLines(filename);
 
         foreach (string line in lines)

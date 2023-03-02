@@ -13,6 +13,7 @@ public class PromptGenerator
 
     public void Prompt()
     {
+        Console.WriteLine();
         Random randomPrompt = new Random();
        
             Console.WriteLine("Welcome to the Journal Prgoram!");
