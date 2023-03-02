@@ -44,14 +44,5 @@ class Program
                 journal.LoadFromFile();
             }
         }
-            
-
-       
-    
-
-
-
-
-
     }
 }

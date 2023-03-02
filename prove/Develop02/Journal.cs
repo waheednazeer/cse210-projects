@@ -18,14 +18,14 @@ public class Journal
         {   
             for (int i = 0; i < _entries.Count; i++)
             {
-            outputFile.WriteLine(_entries[i]._entryList[i]);
+                outputFile.WriteLine(_entries[i]._entryList[i]);
             }
         }
     }
 
     public void LoadFromFile()
     {
-                // listing all available files to load.
+        // listing all available files to load.
         DirectoryInfo d = new DirectoryInfo(@"./data/"); 
 
         FileInfo[] Files = d.GetFiles(); //Getting all files in this directory/folder.
@@ -39,13 +39,10 @@ public class Journal
         string filename = "./data/"+Console.ReadLine();
         Console.WriteLine();
 
-
         string[] lines = System.IO.File.ReadAllLines(filename);
-
         foreach (string line in lines)
         {
             Console.WriteLine(line);
-
         }
     }
 
@@ -53,13 +50,11 @@ public class Journal
     {
       
         for (int i = 0; i < _entries.Count; i++)
-        {
-          
+        {         
             _entries[i].Display();
             Console.WriteLine();
         }
     }
-
 
     public Journal()
     {
