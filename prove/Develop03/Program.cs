@@ -28,7 +28,7 @@ class Program
         Random random = new Random();
         int index = random.Next(0, word.Count);
         
-        Scripture s= new Scripture(reference[index], word[index]);
+        Scripture s= new Scripture(reference[index], word[index]);// Reference and Word class object selected randomly.
 
         
        
