@@ -14,14 +14,14 @@ public void GetBreathingActivity()
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b"); // Erase the + character
+            Console.Write("\b \b"); 
         }
     Console.Write("\nBreathe out...");
         for (int i = 6; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b"); // Erase the + character
+            Console.Write("\b \b"); 
         }
     Console.WriteLine();
 }
