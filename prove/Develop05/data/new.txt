@@ -1,0 +1,4 @@
+1200
+CheckList|checklist |checklist goal|50|2|2|500|True
+Simple|simple|simple goal|100|True
+Simple|reading book|knowledge|500|True

@@ -1,0 +1,3 @@
+700
+CheckList|checklist |checklist goal|50|2|2|500|True
+Simple|simple|simple goal|100|True
