@@ -1,0 +1,5 @@
+-----------------------------------
+Booking Date: 05-Apr-23 1:30:41 AM
+Passenger Name: babar 
+Mobile: 0344-99009900 Seat No: 01 
+Travel Date: 06-04-23 10:50a.m

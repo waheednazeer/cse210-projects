@@ -1,0 +1,3 @@
+SeatNo. 01 [X]
+SeatNo. 02 [ ]
+SeatNo. 03 [ ]

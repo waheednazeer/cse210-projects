@@ -1,0 +1,12 @@
+
+Name:John
+Age:18
+Info:(textmessage)
+|
+Name:May
+Age:17
+Info:(textmessage--------------------------------)
+|
+Name:Jane
+Age:17
+Info:(textmessage)

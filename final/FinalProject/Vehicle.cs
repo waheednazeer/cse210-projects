@@ -27,7 +27,7 @@ public class Vehicle
     {
         return _seatsAvailable;
     }
-    public void SetPassengerDetails()
+    public virtual void SetPassengerDetails()
     {
         //Console.Clear();
         string passengerName, travelDateTime, seatNos;
@@ -41,12 +41,54 @@ public class Vehicle
         seatNos = Console.ReadLine();
         _seatNos = seatNos;
     }
-    public string GetPassengerDetails()
+    public virtual string GetPassengerDetails()
     {
-        return $"Passenger Name: {_passengerName} \nTravell Date: {_travelDateTime} Seat Nos.: {_seatNos}";
+        return "";
     }
      public virtual void DisplayVehicleSeatList()
     {
+        
+    }
+    public virtual string GetPassengerName()
+    {
+        return "";
+    }
+    public virtual string GetTravelDate()
+    {
+        return "";
+    }
+    public virtual string GetBookedSeatNumber()
+    {
+        return "";
+    }
+    public virtual void SetBookedSeat()
+    {
+
+    }
+        public virtual List<string> GetSeatList()
+    {
+        List<string> seatList=new List<string>();
+        return seatList;
+    }
+    public virtual void SetPassengerList()
+    {
+        
+    } 
+    public virtual List<string> GetPassengerList()
+    {
+        List<string> passengerList=new List<string>();
+        return passengerList;
+    }
+
+    public void PrintPassengerList(List<string> passengerList)
+    {
+        Console.Clear();
+        foreach (string passenger in passengerList)
+        {
+            Console.WriteLine($"{passenger}");
+        }
+        Console.WriteLine(passengerList.Count); // for testing List length
+        Console.ReadLine();
         
     }
 }

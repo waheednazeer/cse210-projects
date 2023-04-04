@@ -6,6 +6,7 @@ public class VehicleMenu
     private List<string> _mainMenu;
     private List<string> _withinCityMenu;
     private List<string> _outsideCityMenu;
+    private List<string> _bookingPrintingMenu;
 
     public VehicleMenu()
     {
@@ -32,6 +33,14 @@ public class VehicleMenu
             "   2. Select MiniBus",
             "   3. Select Car"
 
+        };
+        
+        _bookingPrintingMenu = new List<string>
+        {
+            "Do you want to book or print tickets:",
+            "   1. Book Seat",
+            "   2. Print Tickets"
+           
         };
     }
 
@@ -61,6 +70,15 @@ public class VehicleMenu
     {
         Console.Clear();
         foreach (string menuItem in _outsideCityMenu)
+        {
+            Console.WriteLine(menuItem);
+        }
+        Console.Write("Select a choice from the menu: ");
+    }
+        public void DisplayBookingMenu()
+    {
+        Console.Clear();
+        foreach (string menuItem in _bookingPrintingMenu)
         {
             Console.WriteLine(menuItem);
         }
