@@ -35,7 +35,7 @@ public virtual void DisplayVehicleSeatList()
 
     }
 
-      public virtual void SetPassengerDetails()
+      public void SetPassengerDetails()
     {
         //Console.Clear();
         string passengerName, travelDateTime, seatNos, passengerMobile;
@@ -52,11 +52,11 @@ public virtual void DisplayVehicleSeatList()
         seatNos = Console.ReadLine();
         _seatNos = seatNos;
     }
-    public virtual string GetPassengerName()
+    public string GetPassengerName()
     {
         return _passengerName;
     }
-    public virtual string GetTravelDate()
+    public string GetTravelDate()
     {
         return _travelDateTime;
     }
@@ -72,13 +72,13 @@ public virtual void DisplayVehicleSeatList()
     {
         return new List<string>();
     }
-    public virtual string GetPassengerDetails()
+    public string GetPassengerDetails()
     {
         DateTime theCurrentTime= DateTime.Now;
         string dateText = theCurrentTime.ToString();
         return $"-----------------------------------\nBooking Date: {dateText}\nPassenger Name: {_passengerName} \nMobile: {_passengerMobile} Seat No: {_seatNos} \nTravel Date: {_travelDateTime}";
     } 
-    public virtual void SetPassengerList()
+    public void SetPassengerList()
     {
         string passenger= GetPassengerDetails();
         _passengerList.Add(passenger);
