@@ -1,0 +1,6 @@
+MiniCar No. 01 [X]
+MiniCar No. 02 [ ]
+MiniCar No. 03 [ ]
+MiniCar No. 04 [ ]
+MiniCar No. 05 [ ]
+MiniCar No. 06 [ ]

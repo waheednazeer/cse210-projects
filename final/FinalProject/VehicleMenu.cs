@@ -21,8 +21,8 @@ public class VehicleMenu
 
         _withinCityMenu = new List<string>
         {
-            "Do you want to book Car or Bike:",
-            "   1. Select Car",
+            "Do you want to book MiniCar or Bike:",
+            "   1. Select MiniCar",
             "   2. Select Bike",
         };
 

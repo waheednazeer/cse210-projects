@@ -1,16 +1,16 @@
-public class VehicleBike : Vehicle
+public class VehicleMiniCar : Vehicle
 {
     private List<string> _seatsList = new List<string>
     {
-        "Bike No. 01 [ ]", "Bike No. 02 [ ]", "Bike No. 03 [ ]", "Bike No. 04 [ ]", "Bike No. 05 [ ]", "Bike No. 06 [ ]"
+        "MiniCar No. 01 [ ]", "MiniCar No. 02 [ ]", "MiniCar No. 03 [ ]", "MiniCar No. 04 [ ]", "MiniCar No. 05 [ ]", "MiniCar No. 06 [ ]"
     };
 
 
-    public VehicleBike()
+    public VehicleMiniCar()
     {
 
     }
-    public VehicleBike(string vehicleType, int seatsAvailable) : base(vehicleType, seatsAvailable)
+    public VehicleMiniCar(string vehicleType, int seatsAvailable) : base(vehicleType, seatsAvailable)
     {
 
     }
@@ -19,7 +19,7 @@ public override void DisplayVehicleSeatList()
        
         int line= 0;
         Console.Clear();
-         Console.WriteLine("Available Bikes: [ ] | Booked Bikes: [X]\n");
+        Console.WriteLine("Available MiniCar: [ ] | Booked MiniCar: [X]\n");
         foreach (string seatnos in _seatsList)
         {
             Console.Write($" {seatnos} ");
@@ -40,14 +40,14 @@ public override void DisplayVehicleSeatList()
         {
             
             
-            if (_seatsList[i] =="Bike No. "+bookedSeat+" [X]")
+            if (_seatsList[i] =="MiniCar No. "+bookedSeat+" [X]")
             {
-                Console.WriteLine($"\nBike No: {bookedSeat} already booked.");
+                Console.WriteLine($"\nMiniCar No: {bookedSeat} already booked.");
                 
             }
-            if (_seatsList[i] =="Bike No. "+bookedSeat+" [ ]")
+            if (_seatsList[i] =="MiniCar No. "+bookedSeat+" [ ]")
             {
-                _seatsList[i]="Bike No. "+bookedSeat+" [X]";
+                _seatsList[i]="MiniCar No. "+bookedSeat+" [X]";
             }
         }
         Console.ReadLine();

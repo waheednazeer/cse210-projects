@@ -1,5 +1,5 @@
 SeatNo. 01 [X]
-SeatNo. 02 [ ]
+SeatNo. 02 [X]
 SeatNo. 03 [ ]
 SeatNo. 04 [ ]
 SeatNo. 05 [ ]

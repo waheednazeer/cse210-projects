@@ -4,8 +4,9 @@ public class Vehicle
     private string _passengerName;
     private string _travelDateTime;
     private string _seatNos;
+    private string _passengerMobile;
+    private List<string> _passengerList= new List<string>();
     private int _seatsAvailable;
-    private int _seatsBooked;
     private string _vehicleType;
 
     public Vehicle()
@@ -16,7 +17,7 @@ public class Vehicle
     {
         _vehicleType = vehicleType;
         _seatsAvailable = seatsAvailable;
-        _seatsBooked = 0;
+        
     }
 
     public string GetVehicleType()
@@ -27,59 +28,70 @@ public class Vehicle
     {
         return _seatsAvailable;
     }
-    public virtual void SetPassengerDetails()
+//--------all same methods
+public virtual void DisplayVehicleSeatList()
+    {
+
+
+    }
+
+      public virtual void SetPassengerDetails()
     {
         //Console.Clear();
-        string passengerName, travelDateTime, seatNos;
+        string passengerName, travelDateTime, seatNos, passengerMobile;
         Console.Write("Please enter passenger name: ");
         passengerName = Console.ReadLine();
         _passengerName = passengerName;
-        Console.Write("Please travell date and time: ");
+        Console.Write("Please enter passenger mobile no: ");
+        passengerMobile = Console.ReadLine();
+        _passengerMobile = passengerMobile;
+        Console.Write("Please enter travel date and time: ");
         travelDateTime = Console.ReadLine();
         _travelDateTime = travelDateTime;
-        Console.Write("Please enter seat nos.: ");
+        Console.Write("Please enter seat no: ");
         seatNos = Console.ReadLine();
         _seatNos = seatNos;
     }
-    public virtual string GetPassengerDetails()
-    {
-        return "";
-    }
-     public virtual void DisplayVehicleSeatList()
-    {
-        
-    }
     public virtual string GetPassengerName()
     {
-        return "";
+        return _passengerName;
     }
     public virtual string GetTravelDate()
     {
-        return "";
+        return _travelDateTime;
     }
     public virtual string GetBookedSeatNumber()
     {
-        return "";
+        return _seatNos;
     }
     public virtual void SetBookedSeat()
     {
 
     }
-        public virtual List<string> GetSeatList()
+    public virtual List<string> GetSeatList()
     {
-        List<string> seatList=new List<string>();
-        return seatList;
+        return new List<string>();
     }
+    public virtual string GetPassengerDetails()
+    {
+        DateTime theCurrentTime= DateTime.Now;
+        string dateText = theCurrentTime.ToString();
+        return $"-----------------------------------\nBooking Date: {dateText}\nPassenger Name: {_passengerName} \nMobile: {_passengerMobile} Seat No: {_seatNos} \nTravel Date: {_travelDateTime}";
+    } 
     public virtual void SetPassengerList()
     {
-        
+        string passenger= GetPassengerDetails();
+        _passengerList.Add(passenger);
+
     } 
+
     public virtual List<string> GetPassengerList()
     {
-        List<string> passengerList=new List<string>();
-        return passengerList;
-    }
+        return _passengerList;
+    }   
 
+
+//--------this is just testing 
     public void PrintPassengerList(List<string> passengerList)
     {
         Console.Clear();

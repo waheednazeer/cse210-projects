@@ -1,10 +1,6 @@
 public class VehicleFiles
 {
-    public List<Vehicle> _entries= new List<Vehicle>();
-
-
-
-
+   
     public void SaveToFile(string newFile,List<string> newList)
     {
         //Console.Write("Please enter file name: ");
@@ -31,21 +27,22 @@ public class VehicleFiles
         {
             File.Create(filename); 
         }
-        Console.WriteLine();
+        //Console.WriteLine();
 
         string[] fileList = System.IO.File.ReadAllLines(filename);
         foreach (string item in fileList)
         {
             Console.Write(item);
-            seatList[line] = item;
+            
+            
+            
              line++;
             if (line%6==0)
             {
                 Console.WriteLine();
             }
-       
-        Console.WriteLine();
         }
+        
     }
 
      public void LoadPassengerFile(string newFile, List<string> passengerList)

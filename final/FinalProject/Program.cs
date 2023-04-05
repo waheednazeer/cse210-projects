@@ -28,18 +28,67 @@ class Program
                     menu.DisplayWithinCityMenu();
                     withinCityControl=Console.ReadLine();
                     if (withinCityControl == "1")
+                        {
+                            vehicle = new VehicleMiniCar("MiniCar", 1);
+                    
+                            menu.DisplayBookingMenu();
+                            bookingControl= Console.ReadLine();
+                    if (bookingControl == "1")
+                        {
+                            files.LoadFromFile("MiniCarSeats.txt", vehicle.GetSeatList());
+                            Console.WriteLine();
+                            vehicle.SetPassengerDetails();
+                            if (vehicle.GetBookedSeatNumber() != "" && vehicle.GetBookedSeatNumber().Length == 2 && vehicle.GetPassengerName() != "" )
+                            {
+                            
+                            vehicle.SetPassengerList();
+                            vehicle.SetBookedSeat();
+                            files.SavePassengerFile("MiniCarDriverList.txt",vehicle.GetPassengerList());  
+                            files.SaveToFile("MiniCarSeats.txt",vehicle.GetSeatList());
+                        
+                            }
+                        else
+                        {
+                            Console.WriteLine("\n**Seat No. or Name can not be null**");
+                            Console.ReadLine();
+                        }
+                    }
+                    if (bookingControl == "2")
                     {
-                        vehicle= new VehicleCar("Car", 4);
-                        vehicle.SetPassengerDetails();
-                        Console.WriteLine(vehicle.GetPassengerDetails());
-                        Console.ReadLine();
+                        files.LoadPassengerFile("MiniCarDriverList.txt",vehicle.GetPassengerList());                         
+                    } 
+                    }
                     }
                     if (withinCityControl == "2")
                     {
-                        vehicle= new VehicleCar("Bike", 2);
+                    vehicle = new VehicleBike("Bike", 1);
+                    
+                    menu.DisplayBookingMenu();
+                    bookingControl= Console.ReadLine();
+                    if (bookingControl == "1")
+                    {
+                        files.LoadFromFile("BikeSeats.txt", vehicle.GetSeatList());
+                        Console.WriteLine();
                         vehicle.SetPassengerDetails();
-                        Console.WriteLine(vehicle.GetPassengerDetails());
-                        Console.ReadLine();
+                        if (vehicle.GetBookedSeatNumber() != "" && vehicle.GetBookedSeatNumber().Length == 2 && vehicle.GetPassengerName() != "" )
+                        {
+                            
+                            vehicle.SetPassengerList();
+                            vehicle.SetBookedSeat();
+                            files.SavePassengerFile("BikeDriverList.txt",vehicle.GetPassengerList());  
+                            files.SaveToFile("BikeSeats.txt",vehicle.GetSeatList());
+                        
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n**Seat No. or Name can not be null**");
+                            Console.ReadLine();
+                        }
+                    }
+                    if (bookingControl == "2")
+                    {
+                        files.LoadPassengerFile("BikeDriverList.txt",vehicle.GetPassengerList());                         
+                    } 
                     }
                 }
                 else
@@ -54,15 +103,15 @@ class Program
                 outsideCityControl= Console.ReadLine();
                 if (outsideCityControl== "1")
                 {
-                    if(vehicle == null)
-                    {
+
                     vehicle = new VehicleBus("Bus", 24);
-                    }
+
                     menu.DisplayBookingMenu();
                     bookingControl= Console.ReadLine();
                     if (bookingControl == "1")
                     {
                         files.LoadFromFile("BusSeats.txt", vehicle.GetSeatList());
+                        
                         vehicle.SetPassengerDetails();
                         if (vehicle.GetBookedSeatNumber() != "" && vehicle.GetBookedSeatNumber().Length == 2 && vehicle.GetPassengerName() != "" )
                         {
@@ -75,7 +124,7 @@ class Program
                         }
                         else
                         {
-                            Console.WriteLine("Seat No. or Name can not be null");
+                            Console.WriteLine("\n**Seat No. or Name can not be null**");
                             Console.ReadLine();
                         }
                     }
@@ -87,10 +136,9 @@ class Program
 
                 if (outsideCityControl== "2")
                 {
-                    if(vehicle == null)
-                    {
+
                     vehicle = new VehicleMiniBus("MiniBus", 12);
-                    }
+            
                     menu.DisplayBookingMenu();
                     bookingControl= Console.ReadLine();
                     if (bookingControl == "1")
@@ -108,7 +156,7 @@ class Program
                         }
                         else
                         {
-                            Console.WriteLine("Seat No. or Name can not be null");
+                            Console.WriteLine("\n**Seat No. or Name can not be null**");
                             Console.ReadLine();
                         }
                     }
@@ -128,6 +176,7 @@ class Program
                     if (bookingControl == "1")
                     {
                         files.LoadFromFile("CarSeats.txt", vehicle.GetSeatList());
+                        Console.WriteLine();
                         vehicle.SetPassengerDetails();
                         if (vehicle.GetBookedSeatNumber() != "" && vehicle.GetBookedSeatNumber().Length == 2 && vehicle.GetPassengerName() != "" )
                         {
@@ -140,7 +189,7 @@ class Program
                         }
                         else
                         {
-                            Console.WriteLine("Seat No. or Name can not be null");
+                            Console.WriteLine("\n**Seat No. or Name can not be null**");
                             Console.ReadLine();
                         }
                     }
@@ -153,4 +202,3 @@ class Program
         }
     }
     
-}

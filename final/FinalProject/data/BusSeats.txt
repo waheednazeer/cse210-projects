@@ -1,6 +1,6 @@
 SeatNo. 01 [X]
-SeatNo. 02 [ ]
-SeatNo. 03 [ ]
+SeatNo. 02 [X]
+SeatNo. 03 [X]
 SeatNo. 04 [ ]
 SeatNo. 05 [ ]
 SeatNo. 06 [ ]

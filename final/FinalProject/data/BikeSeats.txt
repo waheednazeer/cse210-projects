@@ -1,0 +1,6 @@
+Bike No. 01 [X]
+Bike No. 02 [ ]
+Bike No. 03 [ ]
+Bike No. 04 [ ]
+Bike No. 05 [ ]
+Bike No. 06 [ ]
