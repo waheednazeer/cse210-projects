@@ -28,12 +28,12 @@ class Program
                     menu.DisplayWithinCityMenu();
                     withinCityControl=Console.ReadLine();
                     if (withinCityControl == "1")
-                        {
-                            vehicle = new VehicleMiniCar("MiniCar", 1);
-                    
-                            menu.DisplayBookingMenu();
-                            bookingControl= Console.ReadLine();
-                    if (bookingControl == "1")
+                    {
+                       //-------------
+                        vehicle = new VehicleMiniCar("MiniCar", 1);
+                        menu.DisplayBookingMenu();
+                        bookingControl= Console.ReadLine();
+                        if (bookingControl == "1")
                         {
                             files.LoadFromFile("MiniCarSeats.txt", vehicle.GetSeatList());
                             Console.WriteLine();
@@ -45,50 +45,47 @@ class Program
                             vehicle.SetBookedSeat();
                             files.SavePassengerFile("MiniCarDriverList.txt",vehicle.GetPassengerList());  
                             files.SaveToFile("MiniCarSeats.txt",vehicle.GetSeatList());
-                        
                             }
-                        else
-                        {
+                            else
+                            {
                             Console.WriteLine("\n**Seat No. or Name can not be null**");
                             Console.ReadLine();
+                            }
                         }
-                    }
-                    if (bookingControl == "2")
-                    {
-                        files.LoadPassengerFile("MiniCarDriverList.txt",vehicle.GetPassengerList());                         
-                    } 
-                    }
+                        if (bookingControl == "2")
+                        {
+                            files.LoadPassengerFile("MiniCarDriverList.txt",vehicle.GetPassengerList());                         
+                        } 
+                       //-------------
                     }
                     if (withinCityControl == "2")
                     {
-                    vehicle = new VehicleBike("Bike", 1);
-                    
-                    menu.DisplayBookingMenu();
-                    bookingControl= Console.ReadLine();
-                    if (bookingControl == "1")
-                    {
-                        files.LoadFromFile("BikeSeats.txt", vehicle.GetSeatList());
-                        Console.WriteLine();
-                        vehicle.SetPassengerDetails();
-                        if (vehicle.GetBookedSeatNumber() != "" && vehicle.GetBookedSeatNumber().Length == 2 && vehicle.GetPassengerName() != "" )
+                        vehicle = new VehicleBike("Bike", 1);
+                        menu.DisplayBookingMenu();
+                        bookingControl= Console.ReadLine();
+                        if (bookingControl == "1")
                         {
+                            files.LoadFromFile("BikeSeats.txt", vehicle.GetSeatList());
+                            Console.WriteLine();
+                            vehicle.SetPassengerDetails();
+                            if (vehicle.GetBookedSeatNumber() != "" && vehicle.GetBookedSeatNumber().Length == 2 && vehicle.GetPassengerName() != "" )
+                            {
                             
                             vehicle.SetPassengerList();
                             vehicle.SetBookedSeat();
                             files.SavePassengerFile("BikeDriverList.txt",vehicle.GetPassengerList());  
                             files.SaveToFile("BikeSeats.txt",vehicle.GetSeatList());
-                        
-                        }
-                        else
-                        {
+                            }
+                            else
+                            {
                             Console.WriteLine("\n**Seat No. or Name can not be null**");
                             Console.ReadLine();
+                            }
                         }
-                    }
-                    if (bookingControl == "2")
-                    {
-                        files.LoadPassengerFile("BikeDriverList.txt",vehicle.GetPassengerList());                         
-                    } 
+                        if (bookingControl == "2")
+                        {
+                            files.LoadPassengerFile("BikeDriverList.txt",vehicle.GetPassengerList());                         
+                        } 
                     }
                 }
                 else
@@ -118,9 +115,8 @@ class Program
                             
                             vehicle.SetPassengerList();
                             vehicle.SetBookedSeat();
-                        files.SavePassengerFile("BusPassengerList.txt",vehicle.GetPassengerList());  
-                        files.SaveToFile("BusSeats.txt",vehicle.GetSeatList());
-                        
+                            files.SavePassengerFile("BusPassengerList.txt",vehicle.GetPassengerList());  
+                            files.SaveToFile("BusSeats.txt",vehicle.GetSeatList());
                         }
                         else
                         {
@@ -138,7 +134,6 @@ class Program
                 {
 
                     vehicle = new VehicleMiniBus("MiniBus", 12);
-            
                     menu.DisplayBookingMenu();
                     bookingControl= Console.ReadLine();
                     if (bookingControl == "1")
@@ -150,9 +145,8 @@ class Program
                             
                             vehicle.SetPassengerList();
                             vehicle.SetBookedSeat();
-                        files.SavePassengerFile("MiniBusPassengerList.txt",vehicle.GetPassengerList());  
-                        files.SaveToFile("MiniBusSeats.txt",vehicle.GetSeatList());
-                        
+                            files.SavePassengerFile("MiniBusPassengerList.txt",vehicle.GetPassengerList());  
+                            files.SaveToFile("MiniBusSeats.txt",vehicle.GetSeatList());
                         }
                         else
                         {
@@ -170,7 +164,6 @@ class Program
                 {
 
                     vehicle = new VehicleCar("Car", 3);
-                    
                     menu.DisplayBookingMenu();
                     bookingControl= Console.ReadLine();
                     if (bookingControl == "1")
@@ -202,3 +195,4 @@ class Program
         }
     }
     
+}
